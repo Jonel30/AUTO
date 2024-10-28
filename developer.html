@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lazaro</title>
+    <style>
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 5px #fff, 0 0 10px #00c6ff, 0 0 20px #00c6ff, 0 0 30px #0072ff, 0 0 40px #0072ff, 0 0 50px #0072ff, 0 0 60px #0072ff;
+            }
+            100% {
+                text-shadow: 0 0 10px #fff, 0 0 20px #00c6ff, 0 0 30px #00c6ff, 0 0 40px #0072ff, 0 0 50px #0072ff, 0 0 60px #0072ff, 0 0 70px #0072ff;
+            }
+        }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #1c1c1c;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            backdrop-filter: blur(8.5px);
+            -webkit-backdrop-filter: blur(8.5px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            transition: transform 0.3s ease-in-out;
+        }
+        .container:hover {
+            transform: scale(1.05);
+        }
+        .profile-pic {
+            border-radius: 50%;
+            border: 5px solid #fff;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+        .name {
+            font-size: 2em;
+            margin: 20px 0;
+            color: #fff;
+            animation: glow 1s infinite alternate;
+        }
+        .welcome {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        .button {
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1em;
+            margin-top: 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+        }
+        .button:hover {
+            background: linear-gradient(to right, #0072ff, #00c6ff);
+        }
+        .contact-section {
+            display: none;
+            text-align: center;
+            color: #fff;
+            padding: 30px;
+        }
+        .back-button {
+            background: linear-gradient(to right, #0072ff, #00c6ff);
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1em;
+            margin-top: 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+        }
+        .back-button:hover {
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+        }
+        .social-icons {
+            margin-top: 20px;
+        }
+        .social-icons a {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 2em;
+            transition: color 0.3s ease-in-out;
+        }
+        .social-icons a:hover {
+            color: #00c6ff;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container" id="home-section">
+        <img src="https://i.imgur.com/cxwF3tt.jpeg" alt="Profile Picture" class="profile-pic">
+        <div class="name">Jonel Lazaro</div>
+        <div class="welcome">Welcome to my website!</div>
+        <a href="javascript:void(0)" class="button" onclick="">Contact</a>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/share/8ohs8jTNpbWoMxBA/" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+    
+    <script>
+        function showContact() {
+            document.getElementById('home-section').style.display = 'none';
+            document.getElementById('contact-section').style.display = 'block';
+        }
+        function showHome() {
+            document.getElementById('home-section').style.display = 'block';
+            document.getElementById('contact-section').style.display = 'none';
+        }
+    </script>
+</body>
+   </html>
+   
