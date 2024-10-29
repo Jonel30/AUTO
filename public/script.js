@@ -7,7 +7,7 @@ let Commands = [{
   'handleEvent': []
 }];
 
-
+{
   var index = Math.floor(Math.random() * ads.length);
   window.location.href = ads[index];
 }
