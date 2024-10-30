@@ -5,52 +5,43 @@ module.exports.config = {
     version: '1.0.1',
     role: 0,
     hasPrefix: false,
-    aliases: ['gpt4'],
+    aliases: ['@Josh','@josh'], // Mentions to trigger the command
     description: 'Get a response from GPT-4',
-    usage: 'ai [your message]',
-    credits: 'churchill',
-    cooldown: 3,
+    usage: '@Josh [your message]', // Update usage
+    credits: 'Developer',
+    cooldown: 0,
 };
 
 module.exports.run = async function({ api, event, args }) {
     const pogi = event.senderID;
-    const chilli = args.join(' ');
+    const input = args.join(' ');
 
-    if (!chilli) {
-        return api.sendMessage(`Please provide a question or statement after 'ai'. For example: 'ai What is the capital of France?`, event.threadID, event.messageID);
-    }
+    // Check if the event is a mention
+    if (event.body.includes('@josh') || event.body.includes('@Josh')) { 
+      const bayot = await api.getUserInfo(pogi);
+        const lubot = bayot[pogi].name;
 
-    const bayot = await api.getUserInfo(pogi);
-    const lubot = bayot[pogi].name;
+        
+        const apiUrl = `https://betadash-api-swordslush.vercel.app/gpt-4o-mini?ask=${encodeURIComponent(input)}`;
 
-    const pangit = await new Promise((resolve, reject) => {
-        api.sendMessage({
-            body: `Generating...`,
-        }, event.threadID, (err, info) => {
-            if (err) return reject(err);
-            resolve(info);
-        }, event.messageID);
-    });
+        try {
+            const response = await axios.get(apiUrl);
+            const gpt4Response = response.data.message || 'No response from GPT-4.';
 
-    const apiUrl = `https://betadash-api-swordslush.vercel.app/gpt-4o-mini?ask=${encodeURIComponent(chilli)}`;
-
-    try {
-        const response = await axios.get(apiUrl);
-        const gpt4Response = response.data.message || 'No response from GPT-4.';
-
-        const formattedResponse = 
-`•| Gpt-4 |• 
+            const formattedResponse = 
+`•| Josh Ai |• 
 ━━━━━━━━━━━━━━━━━━
 ${gpt4Response}
 ━━━━━━━━━━━━━━━━━━
 •| OWNER : JONEL LAZARO |•
 👤 Asked by: ${lubot}
-`;
+            `;
 
-        await api.editMessage(formattedResponse, pangit.messageID);
-
-    } catch (error) {
-        console.error('Error:', error);
-        await api.editMessage('An error occurred. Please try again later or use gpt4o.', pangit.messageID);
+            await api.sendMessage(formattedResponse, event.threadID,event.messageID); 
+        } 
+        catch (error) {
+            console.error('Error:', error);
+            await api.editMessage('An error occurred while processing your request.', pangit.messageID);
+        }
     }
 };
