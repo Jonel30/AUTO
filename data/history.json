@@ -1,85 +1,5 @@
 [
   {
-    "userid": "61558943280173",
-    "prefix": "",
-    "admin": [
-      "100093172417993"
-    ],
-    "blacklist": [],
-    "enableCommands": [
-      {
-        "commands": [
-          "adc",
-          "ai",
-          "anime",
-          "dictionary",
-          "emojimix",
-          "help",
-          "hercai",
-          "insult",
-          "music",
-          "out",
-          "pinterest",
-          "poli",
-          "quote",
-          "recipe",
-          "sim",
-          "teach",
-          "tid",
-          "trans",
-          "unsend"
-        ]
-      },
-      {
-        "handleEvent": [
-          "resend",
-          "soyeon"
-        ]
-      }
-    ],
-    "time": 594
-  },
-  {
-    "userid": "61554828511051",
-    "prefix": "",
-    "admin": [
-      "100093172417993"
-    ],
-    "blacklist": [],
-    "enableCommands": [
-      {
-        "commands": [
-          "anime",
-          "ai",
-          "dictionary",
-          "emojimix",
-          "help",
-          "hercai",
-          "insult",
-          "music",
-          "out",
-          "pinterest",
-          "poli",
-          "quote",
-          "recipe",
-          "sim",
-          "teach",
-          "tid",
-          "trans",
-          "unsend",
-          "weather"
-        ]
-      },
-      {
-        "handleEvent": [
-          "resend",
-          "soyeon"
-        ]
-      }
-    ],
-    "time": 5605
-  },
-  {
     "userid": "61554828511051",
     "prefix": "",
     "admin": [
@@ -318,5 +238,25 @@
       }
     ],
     "time": 5605
+  },
+  {
+    "userid": "61558943280173",
+    "prefix": "",
+    "admin": [
+      "100093172417993"
+    ],
+    "blacklist": [],
+    "enableCommands": [
+      {
+        "commands": [
+          "ai",
+          "out"
+        ]
+      },
+      {
+        "handleEvent": []
+      }
+    ],
+    "time": 0
   }
 ]

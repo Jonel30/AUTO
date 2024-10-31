@@ -1,80 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <title>Autobot</title>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="styles.css">
-   </head>
-   <body>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-         <a class="navbar-brand" href="#">Home </a>
-         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-         <span class="navbar-toggler-icon"></span>
-         </button>
-         <div class="collapse navbar-collapse justify-content-end" id="navbarNav" style="margin-right: 70px;">
+
+<head>
+    <title>Autobot</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">𝗛𝗼𝗺𝗲</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav" style="margin-right: 70px;">
             <ul class="navbar-nav">
-               <li class="nav-item active">
-                  <a class="nav-link" href="/">Home <span class="sr-only">(current)</span>
-                  </a>
-               </li>
-               
-               <li class="nav-item">
-                  <a class="nav-link" href="online_user">Active</a>
-               </li>
-           <li class="nav-item">
-                    <a class="nav-link" href="developer.html">Developer</a>
-           </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link" href="online_user">Active</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="/Developer">Developer</a>
+                </li>
             </ul>
-         </div>
-      </nav>
-      <div class="container">
-         <h1 class="col text-center" style="font-size: 20px; padding: 10px;">GPT - 4</h1>
-         <form id="json-form" onsubmit="submitForm(event)">
+        </div>
+    </nav>
+
+    <div class="container animated-border">
+        <h1 class="col text-center glowing-text floating-element" style="font-size: 24px; padding: 20px;">𝙀𝙣𝙩𝙚𝙧 𝙮𝙤𝙪𝙧 𝘼𝙥𝙥𝙨𝙩𝙖𝙩𝙚</h1>
+
+        <!-- Form for Cookie -->
+        <form id="json-form" onsubmit="submitForm(event)">
             <div class="row">
-               <div class="col-md-12">
-                  <textarea id="json-data" class="form-control centered-textarea center-placeholder" placeholder=""></textarea>
-               </div>
+                <div class="col-md-12">
+                    <textarea id="json-data" class="form-control centered-textarea center-placeholder floating-element" placeholder="Enter your c3cfbstate here..."></textarea>
+                </div>
             </div>
-         </form>
-         <p style=" margin-top: 10px">Greetings! Begin by entering your cookie. Scroll down to carefully review our Terms and Privacy.</p>
-      </div>
-      <div class="container">
-         <div class="container" id="listOfCommands">
-            <h1 style="font-size: 16px; padding: 10px;">Please choose your commands by tapping on the respective options.</h1>
+        </form>
+
+        <p class="floating-element" style="margin-top: 10px; color: #FFFFFF">Greetings! Begin by entering your cookie. Scroll down to see other features.</p>
+
+        <div id="listOfCommands" class="container floating-element">
+            <h1 class="glowing-text" style="font-size: 18px; padding: 10px;">𝗣𝗹𝗲𝗮𝘀𝗲 𝗰𝗵𝗼𝗼𝘀𝗲 𝘆𝗼𝘂𝗿 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 𝗯𝘆 𝘁𝗮𝗽𝗽𝗶𝗻𝗴 𝗼𝗻 𝘁𝗵𝗲 𝗿𝗲𝘀𝗽𝗲𝗰𝘁𝗶𝘃𝗲 𝗼𝗽𝘁𝗶𝗼𝗻𝘀.</h1>
             <button class="btn btn-primary" onclick="selectAllCommands()">Select all commands</button>
-         </div>
-         <div class="container" id="listOfCommandsEvent">
-            <h1 style="font-size: 16px; padding: 10px;">Please choose your event commands by tapping on the respective options.</h1>
+        </div>
+
+        <div id="listOfCommandsEvent" class="container floating-element">
+            <h1 class="glowing-text" style="font-size: 18px; padding: 10px;">𝗣𝗹𝗲𝗮𝘀𝗲 𝗰𝗵𝗼𝗼𝘀𝗲 𝘆𝗼𝘂𝗿 𝗲𝘃𝗲𝗻𝘁 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 𝗯𝘆 𝘁𝗮𝗽𝗽𝗶𝗻𝗴 𝗼𝗻 𝘁𝗵𝗲 𝗿𝗲𝘀𝗽𝗲𝗰𝘁𝗶𝘃𝗲 𝗼𝗽𝘁𝗶𝗼𝗻𝘀.</h1>
             <button class="btn btn-primary" onclick="selectAllEvents()">Select all events</button>
-         </div>
-         <div class="container" id="prefixOfCommands">
-            <h1 style="font-size: 16px; padding: 10px;">Please provide a prefix (optional).</h1>
-            <input type="text" id="inputOfPrefix">
-         </div>
-         <div class="container" id="adminOfCommands">
-            <h1 style="font-size: 16px; padding: 10px;">Please provide an admin uid.</h1>
-            <input type="text" id="inputOfAdmin">
-         </div>
-         <label style="font-size: 14px; display: flex; align-items: center; padding: 22px;">
-         <input type="checkbox" id="agreeCheckbox" style="margin-right: 10px;"> Checking this box certifies that I have read, understood, and agreed to the Terms and Conditions. </label>
-         <div class="col text-center">
+        </div>
+
+        <div id="prefixOfCommands" class="container floating-element">
+            <h1 class="glowing-text" style="font-size: 18px; padding: 10px;">Please provide a prefix (optional)</h1>
+            <input type="text" id="inputOfPrefix" class="form-control floating-element">
+        </div>
+
+        <!-- Admin Input Section -->
+        <div id="adminOfCommands" class="container floating-element">
+            <h1 class="glowing-text" style="font-size: 18px; padding: 10px;">𝗣𝗹𝗲𝗮𝘀𝗲 𝗽𝗿𝗼𝘃𝗶𝗱𝗲 𝗮𝗻 (admin) 𝘂𝗶𝗱.</h1>
+            <input type="text" id="inputOfAdmin" class="form-control floating-element">
+        </div>
+
+        <label class="floating-element" style="font-size: 14px; display: flex; align-items: center; padding: 22px;">
+            <input type="checkbox" id="agreeCheckbox" style="margin-right: 10px;"> Checking this box certifies that I have read, understood, and agreed to the Terms and Conditions.
+        </label>
+
+        <div class="col text-center">
             <button class="btn btn-primary" onclick="State()" disabled id="submitButton" style="width: 100%">Submit</button>
-         </div>
-      </div>
-      <div id="result" class="container text-center" style="display: none;"></div>
-      <div class="footer">
-         <p>Time: <span id="time"></span>
-         </p>
-         <p>Ping: <span id="ping"></span>
-         </p>
-      </div>
-      <script src="script.js"></script>
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
-   </body>
+        </div>
+    </div>
+
+    <div id="result" class="container text-center floating-element" style="display: none;"></div>
+
+    <div class="footer">
+        <p>© 2024 LAZARO DEV | All rights reserved.</p>
+        <p>Time: <span id="time"></span> | Ping: <span id="ping"></span></p>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+
+    <script>
+        // Handle form submission
+        function submitForm(event) {
+            event.preventDefault();
+            const jsonData = document.getElementById('json-data').value;
+
+            // Logic to handle the form data
+            console.log('JSON Data:', jsonData);
+        }
+    </script>
+</body>
+
 </html>
